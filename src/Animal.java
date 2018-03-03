@@ -1,7 +1,10 @@
 public class Animal {
-    private String nome;
+    private String nome, habitat;
+    private int peso;
 
-    public Animal(String nome){
+    public Animal(String nome, int peso, String habitat ){
+        this.habitat = habitat;
+        this.peso = peso;
         this.nome = nome;
     }
     public String getNome() {

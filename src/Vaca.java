@@ -1,7 +1,7 @@
 public class Vaca extends Mamifero implements Herbivoros, Selvagem {
 
-    public Vaca(String nome){
-        super(nome);
+    public Vaca(String nome, int peso, String habitat){
+        super(nome, peso, habitat);
     }
     @Override
     public void caracteristicaPricipal() {

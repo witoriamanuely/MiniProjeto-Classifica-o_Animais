@@ -1,7 +1,7 @@
 public class Cobra extends Anfibio implements Carnivoros, Selvagem {
 
-    public Cobra(String nome){
-        super(nome);
+    public Cobra(String nome, int peso, String habitat){
+        super(nome, peso, habitat);
     }
 
     @Override

@@ -11,7 +11,7 @@ public class manipulaArquivo {
 		ObjectOutputStream objGravar = null;
 
 		try {
-			arquivoEscrita = new FileOutputStream("arquivo.txt");
+			arquivoEscrita = new FileOutputStream("/home/witoriamanuely/Downloads/ARQUIVO.txt");
 			/*escrita = new OutputStreamWriter(arquivoEscrita);
 			escritor = new BufferedWriter(escrita);*/
 			objGravar = new ObjectOutputStream(arquivoEscrita);
@@ -39,39 +39,43 @@ public class manipulaArquivo {
 
 
 
-	public static Map<String, Animal> lerArquivo() {
+	public static Map<String, Animal> lerArquivo() throws IOException{
 		Map<String, Animal> temp = new HashMap<String, Animal>();
-		InputStream arq = null;
+		InputStream arquivo = null;
 		InputStreamReader leitor = null;
-		BufferedReader lerArq = null;
-
-		try {
-			arq = new FileInputStream("ARQUIVO.txt");
-			leitor = new InputStreamReader(arq);
-			lerArq = new BufferedReader(leitor);
-		} catch (FileNotFoundException e ) {
-			System.out.print("ERRO" + e);
-		}
-		try {
-			String linha = "";
-			linha = lerArq.readLine();
-			while (linha != null) {
-				temp.put(linha, new Animal(linha));
-				linha = lerArq.readLine();
-
-			}
-		} catch (IOException e) {
-			System.out.print("Erro ao ler arquivo");
-
-		} finally {
+		BufferedReader lerArquivo = null;
+		ObjectInputStream objLeitura = null;
+		File file = new File("/home/witoriamanuely/Downloads/ARQUIVO.txt");
+		if(!file.exists()) {
 			try {
-				lerArq.close();
-				leitor.close();
-				arq.close();
+				arquivo = new FileInputStream("/home/witoriamanuely/Downloads/ARQUIVO.txt");
+				objLeitura = new ObjectInputStream(arquivo);
 			} catch (IOException e) {
-				System.out.print("Erro ao fecha arquivo");
+				System.out.print("Erro ao abrir o arquivo");
 			}
+		}else {
+			try {
 
+				Animal linha;
+				linha = objLeitura.readObject();
+				while (linha != null) {
+					temp.put(linha, new Animal(linha));
+					linha = objLeitura.readObject();
+
+				}
+			} catch (ClassNotFoundException e) {
+				System.out.print("Erro ao ler arquivo");
+
+			} finally {
+				try {
+					lerArquivo.close();
+					leitor.close();
+					arquivo.close();
+				} catch (IOException e) {
+					System.out.print("Erro ao fechar arquivo");
+				}
+
+			}
 		}
 		return temp;
 	}

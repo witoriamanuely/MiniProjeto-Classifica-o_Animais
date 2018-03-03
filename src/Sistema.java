@@ -3,6 +3,7 @@ import java.util.Map;
 
 
 public class Sistema {
+
     private Map<String, Animal> dictAnimais;
 
     public Sistema(){
@@ -23,6 +24,9 @@ public class Sistema {
         for(Animal animal : this.dictAnimais.values()) {
             System.out.println(animal.getNome());
         }
+    }
+    public Map<String, Animal> getDictAnimais() {
+        return dictAnimais;
     }
 
 }

@@ -1,8 +1,8 @@
 public class Pinguim extends Ave implements Carnivoros, Selvagem {
-    public Pinguim(String nome){
-        super(nome);
-    }
 
+    public Pinguim(String nome, int peso, String habitat){
+        super(nome, peso, habitat);
+    }
     @Override
     public void caracteristicaPricipal() {
         super.caracteristicaPricipal();

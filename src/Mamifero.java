@@ -1,7 +1,7 @@
 public class Mamifero extends Animal implements Caracteristica {
 
-    public Mamifero(String nome){
-        super(nome);
+    public Mamifero(String nome, int peso, String habitat){
+        super(nome, peso, habitat);
     }
     @Override
     public String getNome() {
