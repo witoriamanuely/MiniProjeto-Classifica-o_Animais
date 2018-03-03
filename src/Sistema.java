@@ -1,24 +1,27 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Sistema {
-    private List lista = new ArrayList();
+    private Map<String, Animal> dictAnimais;
 
-
+    public Sistema(){
+        this.dictAnimais = new HashMap<String, Animal>();
+        this.dictAnimais = manipulaArquivo.lerArquivo();
+    }
     public void adicionaAnimal(Animal animal){
-        lista.add(animal);
+        this.dictAnimais.put(animal.getNome(), animal);
     }
 
     public void removeAnimal(Animal animal){
-        lista.remove(animal);
+        this.dictAnimais.remove(animal);
     }
     public void atualizaAnimal(Animal animal){
-
+        this.dictAnimais.replace(animal.getNome(), animal);
     }
     public void listaAnimaisArmazenados(){
-        for(int i = 0; i < lista.size(); i++){
-            System.out.print(lista.get(i));
+        for(Animal animal : this.dictAnimais.values()) {
+            System.out.println(animal.getNome());
         }
     }
 
