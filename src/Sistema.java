@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -6,7 +7,7 @@ public class Sistema {
 
     private Map<String, Animal> dictAnimais;
 
-    public Sistema(){
+    public Sistema() throws IOException{
         this.dictAnimais = new HashMap<String, Animal>();
         this.dictAnimais = manipulaArquivo.lerArquivo();
     }

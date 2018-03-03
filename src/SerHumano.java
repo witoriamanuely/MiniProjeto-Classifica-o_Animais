@@ -1,5 +1,7 @@
 public class SerHumano extends Mamifero implements Carnivoros, Herbivoros, Domesticavel {
+    public SerHumano(){
 
+    }
     public SerHumano(String nome, int peso, String habitat){
         super(nome, peso, habitat);
     }

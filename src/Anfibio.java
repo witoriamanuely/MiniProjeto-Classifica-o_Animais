@@ -1,5 +1,8 @@
 public class Anfibio extends Animal implements Caracteristica {
 
+    public Anfibio(){
+        return;
+    }
     public Anfibio(String nome, int peso, String habitat){
         super(nome, peso, habitat);
     }

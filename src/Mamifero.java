@@ -1,5 +1,8 @@
 public class Mamifero extends Animal implements Caracteristica {
 
+    public Mamifero(){
+        return;
+    }
     public Mamifero(String nome, int peso, String habitat){
         super(nome, peso, habitat);
     }

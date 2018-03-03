@@ -47,29 +47,27 @@ public class manipulaArquivo {
 		ObjectInputStream objLeitura = null;
 		File file = new File("/home/witoriamanuely/Downloads/ARQUIVO.txt");
 		if(!file.exists()) {
-			try {
-				arquivo = new FileInputStream("/home/witoriamanuely/Downloads/ARQUIVO.txt");
-				objLeitura = new ObjectInputStream(arquivo);
-			} catch (IOException e) {
-				System.out.print("Erro ao abrir o arquivo");
-			}
+			file.createNewFile();
 		}else {
 			try {
 
-				Animal linha;
-				linha = objLeitura.readObject();
-				while (linha != null) {
-					temp.put(linha, new Animal(linha));
-					linha = objLeitura.readObject();
+				arquivo = new FileInputStream(file);
+				objLeitura = new ObjectInputStream(arquivo);
 
-				}
+			} catch (IOException e) {
+			System.out.print("Erro ao abrir o arquivo");
+		}
+			try {
+				temp = 																																																																																																																																																																																																																																																						objLeitura.readObject();
+
 			} catch (ClassNotFoundException e) {
 				System.out.print("Erro ao ler arquivo");
 
 			} finally {
 				try {
-					lerArquivo.close();
-					leitor.close();
+					/*lerArquivo.close();
+					leitor.close();*/
+					objLeitura.close();
 					arquivo.close();
 				} catch (IOException e) {
 					System.out.print("Erro ao fechar arquivo");

@@ -1,4 +1,7 @@
 public class Tartaruga extends Reptil implements Herbivoros, Domesticavel{
+    public Tartaruga(){
+        return;
+    }
     public Tartaruga(String nome, int peso, String habitat){
         super(nome, peso, habitat);
     }
