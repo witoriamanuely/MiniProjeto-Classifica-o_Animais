@@ -1,6 +1,7 @@
-public class Pinguim extends Ave implements Carnivoros, Selvagem {
+import java.io.Serializable;
+
+public class Pinguim extends Ave implements Carnivoros, Selvagem, Serializable {
     public Pinguim(){
-        return;
     }
     public Pinguim(String nome, int peso, String habitat){
         super(nome, peso, habitat);

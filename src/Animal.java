@@ -1,9 +1,10 @@
-public class Animal {
+import java.io.Serializable;
+
+public class Animal implements Serializable {
     private String nome, habitat;
     private int peso;
 
     public Animal(){
-        return;
     }
     public Animal(String nome, int peso, String habitat ){
         this.habitat = habitat;

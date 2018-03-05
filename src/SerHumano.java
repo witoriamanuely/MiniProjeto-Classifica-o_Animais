@@ -1,4 +1,6 @@
-public class SerHumano extends Mamifero implements Carnivoros, Herbivoros, Domesticavel {
+import java.io.Serializable;
+
+public class SerHumano extends Mamifero implements Carnivoros, Herbivoros, Domesticavel, Serializable {
     public SerHumano(){
 
     }

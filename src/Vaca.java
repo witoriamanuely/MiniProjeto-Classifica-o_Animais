@@ -1,6 +1,7 @@
-public class Vaca extends Mamifero implements Herbivoros, Selvagem {
+import java.io.Serializable;
+
+public class Vaca extends Mamifero implements Herbivoros, Selvagem, Serializable{
     public Vaca(){
-        return;
     }
     public Vaca(String nome, int peso, String habitat){
         super(nome, peso, habitat);

@@ -1,8 +1,8 @@
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+import java.io.Serializable;
 
-public class Ave extends Animal implements Caracteristica {
+public class Ave extends Animal implements Caracteristica, Serializable {
     public Ave(){
-        return;
+
     }
     public Ave(String nome, int peso, String habitat){
         super(nome, peso, habitat);

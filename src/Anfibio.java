@@ -1,4 +1,6 @@
-public class Anfibio extends Animal implements Caracteristica {
+import java.io.Serializable;
+
+public class Anfibio extends Animal implements Caracteristica, Serializable {
 
     public Anfibio(){
         return;

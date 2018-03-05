@@ -1,4 +1,6 @@
-public class Reptil extends Animal implements Caracteristica {
+import java.io.Serializable;
+
+public class Reptil extends Animal implements Caracteristica, Serializable {
     public Reptil(){
 
     }

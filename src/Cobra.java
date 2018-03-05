@@ -1,6 +1,8 @@
-public class Cobra extends Anfibio implements Carnivoros, Selvagem {
+import java.io.Serializable;
+
+public class Cobra extends Anfibio implements Carnivoros, Selvagem, Serializable {
     public Cobra(){
-        return;
+
     }
     public Cobra(String nome, int peso, String habitat){
         super(nome, peso, habitat);

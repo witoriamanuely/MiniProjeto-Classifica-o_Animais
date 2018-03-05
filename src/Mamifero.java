@@ -1,7 +1,8 @@
-public class Mamifero extends Animal implements Caracteristica {
+import java.io.Serializable;
+
+public class Mamifero extends Animal implements Caracteristica, Serializable {
 
     public Mamifero(){
-        return;
     }
     public Mamifero(String nome, int peso, String habitat){
         super(nome, peso, habitat);
